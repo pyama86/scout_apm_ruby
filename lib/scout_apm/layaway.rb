@@ -44,6 +44,7 @@ module ScoutApm
         "/tmp"
       ].compact
 
+      logger.info(candidates.inspect)
       found = candidates.detect { |dir| File.writable?(dir) }
       logger.debug("Storing Layaway Files in #{found}")
       @directory = Pathname.new(found)
